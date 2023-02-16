@@ -1,6 +1,5 @@
 #Task Blue/Green deployment strategy -
 
-<span style="color:green">This text is blue</span>
 
 What is the blue/green deployment strategy for k8 based on deployments service and ingress please describe how to switch versions ?
 Ans - Blue/green deployment is a deployment strategy used in Kubernetes for releasing new versions of an application with zero downtime. In this deployment strategy, two identical environments or "deployments" of the application, called "blue" and "green", are maintained at the same time. Traffic is initially routed to the "blue" environment, while the "green" environment is updated with the new version of the application. Once the "green" environment has been successfully deployed and tested, traffic is switched over to it and the "blue" environment is decommissioned. This approach ensures that there is always a working version of the application available, even during the deployment process.
