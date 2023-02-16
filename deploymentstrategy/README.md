@@ -7,22 +7,22 @@ Below steps for Deployments, Services, and Ingress.
 
 Deployment named my-app and a service named my-app-service, created two additional deployments and services for the blue and green environments.
 
-+STEP-1
++ STEP-1
 
 The my-app-blue Deployment and my-app-blue-service Service are created with the my-app:blue image, while the my-app-green Deployment and my-app-green-service Service are created with the my-app:green image.
 
-+STEP-2
++ STEP-2
 
 replicas for my-app-blue to 1 to ensure that at least one instance of the "blue" environment is running, while the my-app-green Deployment is initially set to 0 replicas to prevent traffic from being routed to it.
 
 
-+STEP-3
++ STEP-3
 
 To switch traffic from the "blue" environment to the "green" environment, we can use an Ingress resource
 
 
 
-+STEP-4
++ STEP-4
 
 Creating an Ingress resource with a my-app.example.com hostname and a / path. The my-app-blue-service Service is initially set as the backend for this Ingress, which means that traffic is initially routed to the "blue" environment.
 
