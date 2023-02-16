@@ -1,1 +1,63 @@
-Enter here
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-blue
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: my-app
+        env: blue
+    spec:
+      containers:
+      - name: my-app
+        image: my-app:blue
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-blue-service
+spec:
+  selector:
+    app: my-app
+    env: blue
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8080
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-green
+spec:
+  replicas: 0
+  template:
+    metadata:
+      labels:
+        app: my-app
+        env: green
+    spec:
+      containers:
+      - name: my-app
+        image: my-app:green
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-green-service
+spec:
+  selector:
+    app: my-app
+    env: green
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8080
