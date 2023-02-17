@@ -12,7 +12,8 @@ Function retrieves the connection string and queue name from environment variabl
 
 #Step:2 -
 Azure Function for running the container service
-Azure Function in Python that loads a message from the queue and runs a container service that prints "Hello world". Above the source code for the function.
+Azure Function in Python that loads a message from the queue and runs a container service that prints "Hello world". Above the source.prints code for the function.
+This function retrieves the message from the queue, retrieves the container group details and credentials from environment variables, and restarts the container group. We'll set up a queue trigger to run this function whenever a message is added to the queue.
 
 #Step:3 -
 Kubernetes deployment -a Kubernetes deployment that includes these two functions.Created two separate deployment files, one for each function.
