@@ -7,7 +7,7 @@ Two Azure Functions, one that puts a message to an Azure Storage Queue every min
 
 #Step:1 -
 Azure Function for putting messages to the queue.
-Azure Function in Python that puts a message to the Azure Storage Queue every minute.using the Azure Functions Core Tools to create and deploy this function. Above the source code for the function.
+Azure Function in Python that puts a message to the Azure Storage Queue every minute.using the Azure Functions Core Tools to create and deploy this function. Above the source.code for the function.
 Function retrieves the connection string and queue name from environment variables, creates a QueueClient instance, and sends a message to the queue with the current timestamp.
 
 #Step:2 -
