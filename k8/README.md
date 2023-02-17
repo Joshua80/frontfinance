@@ -1,6 +1,6 @@
 # K8 task
 
-This is the test task for devops
+This is the test task for devops interview
 
 Question -
 How can you restrict networking between pods in Kubernetes give an example should this mechanism be enabled separately ?
