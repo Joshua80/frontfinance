@@ -1,0 +1,21 @@
+import datetime
+import logging
+import os
+
+import azure.functions as func
+from azure.storage.queue import QueueClient
+
+
+def main(mytimer: func.TimerRequest) -> None:
+    utc_timestamp = datetime.datetime.utcnow().replace(
+        tzinfo=datetime.timezone.utc).isoformat()
+
+    queue_connection_string = os.environ['QUEUE_CONNECTION_STRING']
+    queue_name = os.environ['QUEUE_NAME']
+    queue_client = QueueClient.from_connection_string(queue_connection_string, queue_name)
+
+    message = utc_timestamp.encode('utf-8')
+    queue_client.send_message(message)
+
+    logging.info('Python timer trigger function ran at %s', utc_timestamp)
+
