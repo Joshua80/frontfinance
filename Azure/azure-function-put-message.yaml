@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-function-put-message
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azure-function-put-message
+  template:
+    metadata:
+      labels:
+        app: azure-function-put-message
+    spec:
+      containers:
+      - name: azure-function-put-message
+        image: mcr.microsoft.com/azure-functions/python:3.0
+        env:
+        - name: QUEUE_CONNECTION_STRING
+          value: <your-queue-connection-string>
+        - name: QUEUE_NAME
+          value: <your-queue-name>
+        command: [ "/
