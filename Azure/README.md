@@ -15,4 +15,4 @@ Azure Function for running the container service
 Azure Function in Python that loads a message from the queue and runs a container service that prints "Hello world". Above the source code for the function.
 
 #Step:3 -
-Kubernetes deployment -a Kubernetes deployment that includes these two functions.created two separate deployment files, one for each function.
+Kubernetes deployment -a Kubernetes deployment that includes these two functions.Created two separate deployment files, one for each function.
