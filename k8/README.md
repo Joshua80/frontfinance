@@ -1,6 +1,8 @@
 # K8 task
+
 This is the test task for devops
 
+Question -
 How can you restrict networking between pods in Kubernetes give an example should this mechanism be enabled separately ?
 To restrict networking between pods in Kubernetes, you can use Kubernetes Network Policies. Network Policies allow you to define rules that determine which pods can communicate with each other, based on their labels.
 
